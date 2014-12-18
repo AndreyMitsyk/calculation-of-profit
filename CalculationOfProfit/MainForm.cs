@@ -176,8 +176,8 @@
 
             #region Параметры участков
 
-            float[] k = new float[4];
-            float[] b = new float[4];
+            double[] k = new double[4];
+            double[] b = new double[4];
             int[] t1 = new int[4];
             int[] t2 = new int[4];
 
@@ -185,14 +185,14 @@
 
             t1[0] = 0;
             t2[0] = dataOfTest.T[0];
-            k[0] = dataOfTest.V[0]/t2[0];
+            k[0] = Convert.ToDouble(dataOfTest.V[0])/Convert.ToDouble(t2[0]);
             b[0] = 0;
             graph(t1[0], 0, t2[0], dataOfTest.V[0]);
 
             t1[1] = dataOfTest.T[0];
             t2[1] = dataOfTest.T[0] + dataOfTest.T[1];
-            k[1] = (dataOfTest.V[1] - dataOfTest.V[0]) / (t2[1] - t1[1]);
-            b[1] = -(t1[1]*dataOfTest.V[1] - t2[1]*dataOfTest.V[0])/(t2[1] - t1[1]);
+            k[1] = Convert.ToDouble(dataOfTest.V[1] - dataOfTest.V[0]) / Convert.ToDouble(t2[1] - t1[1]);
+            b[1] = -Convert.ToDouble(t1[1] * dataOfTest.V[1] - t2[1] * dataOfTest.V[0]) / Convert.ToDouble(t2[1] - t1[1]);
             graph(t1[1], dataOfTest.V[0], t2[1], dataOfTest.V[1]);
 
             t1[2] = dataOfTest.T[0] + dataOfTest.T[1];
@@ -203,8 +203,8 @@
 
             t1[3] = dataOfTest.T[0] + dataOfTest.T[1] + dataOfTest.T[2];
             t2[3] = dataOfTest.T[0] + dataOfTest.T[1] + dataOfTest.T[2] + dataOfTest.T[3];
-            k[3] = (0 - dataOfTest.V[1]) / (t2[3] - t1[3]);
-            b[3] = -(0 - t2[3] * dataOfTest.V[1]) / (t2[3] - t1[3]);
+            k[3] = Convert.ToDouble(0 - dataOfTest.V[1]) / Convert.ToDouble(t2[3] - t1[3]);
+            b[3] = -Convert.ToDouble(0 - t2[3] * dataOfTest.V[1]) / Convert.ToDouble(t2[3] - t1[3]);
             graph(t1[3], dataOfTest.V[1], t2[3], 0);
 
             #endregion
