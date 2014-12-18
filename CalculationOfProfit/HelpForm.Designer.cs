@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpForm));
             this.tb_Help = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             this.ClientSize = new System.Drawing.Size(279, 342);
             this.Controls.Add(this.tb_Help);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HelpForm";
