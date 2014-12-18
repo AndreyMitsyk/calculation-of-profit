@@ -57,7 +57,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HelpForm";
-            this.Text = "HelpForm";
+            this.Text = "Справка";
             this.Load += new System.EventHandler(this.HelpForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
