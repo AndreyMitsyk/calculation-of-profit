@@ -71,10 +71,12 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.graphWind = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Pb1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.Gb_initVal.SuspendLayout();
             this.Gb_result.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.graphWind)).BeginInit();
             this.SuspendLayout();
             // 
             // Pb1
@@ -460,12 +462,22 @@
             this.label16.TabIndex = 40;
             this.label16.Text = "Длительности этапов ЖЦ:";
             // 
+            // graphWind
+            // 
+            this.graphWind.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.graphWind.Location = new System.Drawing.Point(381, 200);
+            this.graphWind.Name = "graphWind";
+            this.graphWind.Size = new System.Drawing.Size(345, 181);
+            this.graphWind.TabIndex = 22;
+            this.graphWind.TabStop = false;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(738, 393);
+            this.Controls.Add(this.graphWind);
             this.Controls.Add(this.Gb_result);
             this.Controls.Add(this.Gb_initVal);
             this.Controls.Add(this.Pb1);
@@ -483,6 +495,7 @@
             this.Gb_initVal.PerformLayout();
             this.Gb_result.ResumeLayout(false);
             this.Gb_result.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.graphWind)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,6 +545,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.PictureBox graphWind;
     }
 }
 

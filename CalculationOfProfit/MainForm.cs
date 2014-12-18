@@ -1,6 +1,7 @@
 ﻿namespace CalculationOfProfit
 {
     using System;
+    using System.Drawing;
     using System.IO;
     using System.Xml.Serialization;
     using System.Windows.Forms;
@@ -145,6 +146,9 @@
 
             #endregion
 
+            // Сброс графиков.
+            graphWind.Refresh();
+
             #region Расчет
 
             // Коэффициенты рассчитываются исходя из того, что:
@@ -154,30 +158,36 @@
 
             #region Параметры участков
 
-            double[] k = new double[4];
-            double[] b = new double[4];
+            float[] k = new float[4];
+            float[] b = new float[4];
             int[] t1 = new int[4];
             int[] t2 = new int[4];
+
+            // Расчитываем параметры каждого участка и строим прямую, соответчтвующую этим параметрам.
 
             t1[0] = 0;
             t2[0] = dataOfTest.T[0];
             k[0] = dataOfTest.V[0]/t2[0];
             b[0] = 0;
+            graph(t1[0], 0, t2[0], dataOfTest.V[0]);
 
             t1[1] = dataOfTest.T[0];
             t2[1] = dataOfTest.T[0] + dataOfTest.T[1];
             k[1] = (dataOfTest.V[1] - dataOfTest.V[0]) / (t2[1] - t1[1]);
             b[1] = -(t1[1]*dataOfTest.V[1] - t2[1]*dataOfTest.V[0])/(t2[1] - t1[1]);
+            graph(t1[1], dataOfTest.V[0], t2[1], dataOfTest.V[1]);
 
             t1[2] = dataOfTest.T[0] + dataOfTest.T[1];
             t2[2] = dataOfTest.T[0] + dataOfTest.T[1] + dataOfTest.T[2];
             k[2] = 0;
             b[2] = dataOfTest.V[1];
+            graph(t1[2], dataOfTest.V[1], t2[2], dataOfTest.V[1]);
 
             t1[3] = dataOfTest.T[0] + dataOfTest.T[1] + dataOfTest.T[2];
             t2[3] = dataOfTest.T[0] + dataOfTest.T[1] + dataOfTest.T[2] + dataOfTest.T[3];
             k[3] = (0 - dataOfTest.V[1]) / (t2[3] - t1[3]);
             b[3] = -(0 - t2[3] * dataOfTest.V[1]) / (t2[3] - t1[3]);
+            graph(t1[3], dataOfTest.V[1], t2[3], 0);
 
             #endregion
 
@@ -200,6 +210,28 @@
         }
 
         /// <summary>
+        /// Процедура построения графика.
+        /// </summary>
+        /// <param name="x1">x1</param>
+        /// <param name="y1">y1</param>
+        /// <param name="x2">x2</param>
+        /// <param name="y2">y2</param>
+        private void graph(float x1, float y1, float x2, float y2)
+        {
+            Graphics g = graphWind.CreateGraphics();
+
+            // Задаем параметры для построения.
+            float xmax = dataOfTest.T[0] + dataOfTest.T[1] + dataOfTest.T[2] + dataOfTest.T[3] + 1;
+            float ymax = dataOfTest.V[1] + 1;
+            float kx = graphWind.Width/xmax;
+            float ky = graphWind.Height / ymax;
+            Pen myPen = new Pen(Color.Blue);
+
+            // Строим прямую.
+            g.DrawLine(myPen, kx * x1, graphWind.Height - ky * y1, kx * x2, graphWind.Height - ky * y2);
+        }
+
+        /// <summary>
         /// Расчет объема продаж на данном участке ЖЦ.
         /// </summary>
         /// <param name="k">Параметр прямой.</param>
@@ -211,6 +243,7 @@
         {
             double v = 0;
 
+            // Суммируем объем продаж на участке за весь этап.
             for (int t = t1+1; t <= t2; t++)
             {
                 v += k*t + b;
@@ -237,7 +270,8 @@
         private void newTest_Click(object sender, EventArgs e)
         {
             TB_date.Text = DateTime.Now.ToString();
-
+            
+            // Обнуляем параметры.
             Tb_t1.Text =
                 Tb_t2.Text =
                     Tb_t3.Text =
