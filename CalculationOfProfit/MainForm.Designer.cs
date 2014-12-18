@@ -39,22 +39,14 @@
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Gb_initVal = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.Tb_price = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Tb_v2 = new System.Windows.Forms.TextBox();
-            this.Tb_v1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_t1 = new System.Windows.Forms.Label();
-            this.Tb_t4 = new System.Windows.Forms.TextBox();
-            this.Tb_t3 = new System.Windows.Forms.TextBox();
-            this.Tb_t2 = new System.Windows.Forms.TextBox();
-            this.Tb_t1 = new System.Windows.Forms.TextBox();
             this.TB_date = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.Tb_costs = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.Gb_result = new System.Windows.Forms.GroupBox();
             this.tb_prof1 = new System.Windows.Forms.TextBox();
@@ -69,14 +61,29 @@
             this.label13 = new System.Windows.Forms.Label();
             this.Btn_result = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.graphWind = new System.Windows.Forms.PictureBox();
+            this.Tb_t1 = new System.Windows.Forms.NumericUpDown();
+            this.Tb_t2 = new System.Windows.Forms.NumericUpDown();
+            this.Tb_t3 = new System.Windows.Forms.NumericUpDown();
+            this.Tb_t4 = new System.Windows.Forms.NumericUpDown();
+            this.Tb_v1 = new System.Windows.Forms.NumericUpDown();
+            this.Tb_v2 = new System.Windows.Forms.NumericUpDown();
+            this.Tb_price = new System.Windows.Forms.NumericUpDown();
+            this.Tb_costs = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.Pb1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.Gb_initVal.SuspendLayout();
             this.Gb_result.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.graphWind)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_t1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_t2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_t3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_t4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_v1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_v2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_price)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_costs)).BeginInit();
             this.SuspendLayout();
             // 
             // Pb1
@@ -148,27 +155,26 @@
             // 
             // Gb_initVal
             // 
-            this.Gb_initVal.Controls.Add(this.label16);
-            this.Gb_initVal.Controls.Add(this.label15);
-            this.Gb_initVal.Controls.Add(this.label14);
-            this.Gb_initVal.Controls.Add(this.label8);
             this.Gb_initVal.Controls.Add(this.Tb_costs);
-            this.Gb_initVal.Controls.Add(this.label7);
-            this.Gb_initVal.Controls.Add(this.TB_date);
-            this.Gb_initVal.Controls.Add(this.label6);
             this.Gb_initVal.Controls.Add(this.Tb_price);
-            this.Gb_initVal.Controls.Add(this.label5);
-            this.Gb_initVal.Controls.Add(this.label4);
             this.Gb_initVal.Controls.Add(this.Tb_v2);
             this.Gb_initVal.Controls.Add(this.Tb_v1);
-            this.Gb_initVal.Controls.Add(this.label3);
-            this.Gb_initVal.Controls.Add(this.label2);
-            this.Gb_initVal.Controls.Add(this.label1);
-            this.Gb_initVal.Controls.Add(this.lbl_t1);
             this.Gb_initVal.Controls.Add(this.Tb_t4);
             this.Gb_initVal.Controls.Add(this.Tb_t3);
             this.Gb_initVal.Controls.Add(this.Tb_t2);
             this.Gb_initVal.Controls.Add(this.Tb_t1);
+            this.Gb_initVal.Controls.Add(this.label16);
+            this.Gb_initVal.Controls.Add(this.label14);
+            this.Gb_initVal.Controls.Add(this.label8);
+            this.Gb_initVal.Controls.Add(this.label7);
+            this.Gb_initVal.Controls.Add(this.TB_date);
+            this.Gb_initVal.Controls.Add(this.label6);
+            this.Gb_initVal.Controls.Add(this.label5);
+            this.Gb_initVal.Controls.Add(this.label4);
+            this.Gb_initVal.Controls.Add(this.label3);
+            this.Gb_initVal.Controls.Add(this.label2);
+            this.Gb_initVal.Controls.Add(this.label1);
+            this.Gb_initVal.Controls.Add(this.lbl_t1);
             this.Gb_initVal.Location = new System.Drawing.Point(12, 200);
             this.Gb_initVal.Name = "Gb_initVal";
             this.Gb_initVal.Size = new System.Drawing.Size(363, 181);
@@ -184,13 +190,6 @@
             this.label6.Size = new System.Drawing.Size(84, 13);
             this.label6.TabIndex = 33;
             this.label6.Text = "Цена изделия=";
-            // 
-            // Tb_price
-            // 
-            this.Tb_price.Location = new System.Drawing.Point(217, 101);
-            this.Tb_price.Name = "Tb_price";
-            this.Tb_price.Size = new System.Drawing.Size(128, 20);
-            this.Tb_price.TabIndex = 32;
             // 
             // label5
             // 
@@ -209,20 +208,6 @@
             this.label4.Size = new System.Drawing.Size(25, 13);
             this.label4.TabIndex = 30;
             this.label4.Text = "v1=";
-            // 
-            // Tb_v2
-            // 
-            this.Tb_v2.Location = new System.Drawing.Point(49, 127);
-            this.Tb_v2.Name = "Tb_v2";
-            this.Tb_v2.Size = new System.Drawing.Size(47, 20);
-            this.Tb_v2.TabIndex = 29;
-            // 
-            // Tb_v1
-            // 
-            this.Tb_v1.Location = new System.Drawing.Point(49, 101);
-            this.Tb_v1.Name = "Tb_v1";
-            this.Tb_v1.Size = new System.Drawing.Size(47, 20);
-            this.Tb_v1.TabIndex = 28;
             // 
             // label3
             // 
@@ -260,34 +245,6 @@
             this.lbl_t1.TabIndex = 24;
             this.lbl_t1.Text = "t1=";
             // 
-            // Tb_t4
-            // 
-            this.Tb_t4.Location = new System.Drawing.Point(298, 64);
-            this.Tb_t4.Name = "Tb_t4";
-            this.Tb_t4.Size = new System.Drawing.Size(47, 20);
-            this.Tb_t4.TabIndex = 23;
-            // 
-            // Tb_t3
-            // 
-            this.Tb_t3.Location = new System.Drawing.Point(217, 64);
-            this.Tb_t3.Name = "Tb_t3";
-            this.Tb_t3.Size = new System.Drawing.Size(47, 20);
-            this.Tb_t3.TabIndex = 22;
-            // 
-            // Tb_t2
-            // 
-            this.Tb_t2.Location = new System.Drawing.Point(130, 64);
-            this.Tb_t2.Name = "Tb_t2";
-            this.Tb_t2.Size = new System.Drawing.Size(47, 20);
-            this.Tb_t2.TabIndex = 21;
-            // 
-            // Tb_t1
-            // 
-            this.Tb_t1.Location = new System.Drawing.Point(49, 64);
-            this.Tb_t1.Name = "Tb_t1";
-            this.Tb_t1.Size = new System.Drawing.Size(47, 20);
-            this.Tb_t1.TabIndex = 20;
-            // 
             // TB_date
             // 
             this.TB_date.Location = new System.Drawing.Point(170, 19);
@@ -295,6 +252,7 @@
             this.TB_date.ReadOnly = true;
             this.TB_date.Size = new System.Drawing.Size(175, 20);
             this.TB_date.TabIndex = 34;
+            this.TB_date.TabStop = false;
             // 
             // label7
             // 
@@ -305,21 +263,14 @@
             this.label7.TabIndex = 35;
             this.label7.Text = "Время проведения тестов:";
             // 
-            // Tb_costs
-            // 
-            this.Tb_costs.Location = new System.Drawing.Point(217, 155);
-            this.Tb_costs.Name = "Tb_costs";
-            this.Tb_costs.Size = new System.Drawing.Size(128, 20);
-            this.Tb_costs.TabIndex = 36;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(127, 158);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 13);
+            this.label8.Size = new System.Drawing.Size(84, 13);
             this.label8.TabIndex = 37;
-            this.label8.Text = "1ого изделия=";
+            this.label8.Text = "1 ого изделия=";
             // 
             // Gb_result
             // 
@@ -439,20 +390,11 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(127, 130);
+            this.label14.Location = new System.Drawing.Point(127, 140);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 13);
+            this.label14.Size = new System.Drawing.Size(125, 13);
             this.label14.TabIndex = 38;
-            this.label14.Text = "Издержки";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(127, 143);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 13);
-            this.label15.TabIndex = 39;
-            this.label15.Text = "на создание";
+            this.label14.Text = "Издержки на создание";
             // 
             // label16
             // 
@@ -471,6 +413,104 @@
             this.graphWind.Size = new System.Drawing.Size(345, 181);
             this.graphWind.TabIndex = 22;
             this.graphWind.TabStop = false;
+            // 
+            // Tb_t1
+            // 
+            this.Tb_t1.Location = new System.Drawing.Point(49, 65);
+            this.Tb_t1.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.Tb_t1.Name = "Tb_t1";
+            this.Tb_t1.Size = new System.Drawing.Size(47, 20);
+            this.Tb_t1.TabIndex = 42;
+            // 
+            // Tb_t2
+            // 
+            this.Tb_t2.Location = new System.Drawing.Point(130, 65);
+            this.Tb_t2.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.Tb_t2.Name = "Tb_t2";
+            this.Tb_t2.Size = new System.Drawing.Size(47, 20);
+            this.Tb_t2.TabIndex = 43;
+            // 
+            // Tb_t3
+            // 
+            this.Tb_t3.Location = new System.Drawing.Point(217, 65);
+            this.Tb_t3.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.Tb_t3.Name = "Tb_t3";
+            this.Tb_t3.Size = new System.Drawing.Size(47, 20);
+            this.Tb_t3.TabIndex = 44;
+            // 
+            // Tb_t4
+            // 
+            this.Tb_t4.Location = new System.Drawing.Point(298, 65);
+            this.Tb_t4.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.Tb_t4.Name = "Tb_t4";
+            this.Tb_t4.Size = new System.Drawing.Size(47, 20);
+            this.Tb_t4.TabIndex = 45;
+            // 
+            // Tb_v1
+            // 
+            this.Tb_v1.Location = new System.Drawing.Point(49, 102);
+            this.Tb_v1.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.Tb_v1.Name = "Tb_v1";
+            this.Tb_v1.Size = new System.Drawing.Size(72, 20);
+            this.Tb_v1.TabIndex = 46;
+            // 
+            // Tb_v2
+            // 
+            this.Tb_v2.Location = new System.Drawing.Point(49, 128);
+            this.Tb_v2.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.Tb_v2.Name = "Tb_v2";
+            this.Tb_v2.Size = new System.Drawing.Size(72, 20);
+            this.Tb_v2.TabIndex = 47;
+            // 
+            // Tb_price
+            // 
+            this.Tb_price.DecimalPlaces = 2;
+            this.Tb_price.Location = new System.Drawing.Point(217, 104);
+            this.Tb_price.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.Tb_price.Name = "Tb_price";
+            this.Tb_price.Size = new System.Drawing.Size(128, 20);
+            this.Tb_price.TabIndex = 48;
+            // 
+            // Tb_costs
+            // 
+            this.Tb_costs.DecimalPlaces = 2;
+            this.Tb_costs.Location = new System.Drawing.Point(217, 156);
+            this.Tb_costs.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.Tb_costs.Name = "Tb_costs";
+            this.Tb_costs.Size = new System.Drawing.Size(128, 20);
+            this.Tb_costs.TabIndex = 49;
             // 
             // FrmMain
             // 
@@ -497,6 +537,14 @@
             this.Gb_result.ResumeLayout(false);
             this.Gb_result.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.graphWind)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_t1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_t2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_t3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_t4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_v1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_v2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_price)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tb_costs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -516,21 +564,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TB_date;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox Tb_price;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox Tb_v2;
-        private System.Windows.Forms.TextBox Tb_v1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_t1;
-        private System.Windows.Forms.TextBox Tb_t4;
-        private System.Windows.Forms.TextBox Tb_t3;
-        private System.Windows.Forms.TextBox Tb_t2;
-        private System.Windows.Forms.TextBox Tb_t1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox Tb_costs;
         private System.Windows.Forms.GroupBox Gb_result;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -543,10 +583,17 @@
         private System.Windows.Forms.TextBox tb_prof2;
         private System.Windows.Forms.TextBox tb_prof1;
         private System.Windows.Forms.Button Btn_result;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox graphWind;
+        private System.Windows.Forms.NumericUpDown Tb_costs;
+        private System.Windows.Forms.NumericUpDown Tb_price;
+        private System.Windows.Forms.NumericUpDown Tb_v2;
+        private System.Windows.Forms.NumericUpDown Tb_v1;
+        private System.Windows.Forms.NumericUpDown Tb_t4;
+        private System.Windows.Forms.NumericUpDown Tb_t3;
+        private System.Windows.Forms.NumericUpDown Tb_t2;
+        private System.Windows.Forms.NumericUpDown Tb_t1;
     }
 }
 
