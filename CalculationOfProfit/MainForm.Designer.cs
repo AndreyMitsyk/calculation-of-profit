@@ -70,6 +70,7 @@
             this.Btn_result = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Pb1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.Gb_initVal.SuspendLayout();
@@ -113,6 +114,7 @@
             this.newTest.Name = "newTest";
             this.newTest.Size = new System.Drawing.Size(240, 22);
             this.newTest.Text = "Новое испытание";
+            this.newTest.Click += new System.EventHandler(this.newTest_Click);
             // 
             // openTestData
             // 
@@ -143,6 +145,7 @@
             // 
             // Gb_initVal
             // 
+            this.Gb_initVal.Controls.Add(this.label16);
             this.Gb_initVal.Controls.Add(this.label15);
             this.Gb_initVal.Controls.Add(this.label14);
             this.Gb_initVal.Controls.Add(this.label8);
@@ -165,7 +168,7 @@
             this.Gb_initVal.Controls.Add(this.Tb_t1);
             this.Gb_initVal.Location = new System.Drawing.Point(12, 200);
             this.Gb_initVal.Name = "Gb_initVal";
-            this.Gb_initVal.Size = new System.Drawing.Size(363, 164);
+            this.Gb_initVal.Size = new System.Drawing.Size(363, 181);
             this.Gb_initVal.TabIndex = 20;
             this.Gb_initVal.TabStop = false;
             this.Gb_initVal.Text = "Начальные параметры";
@@ -173,7 +176,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(127, 87);
+            this.label6.Location = new System.Drawing.Point(127, 104);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 13);
             this.label6.TabIndex = 33;
@@ -181,7 +184,7 @@
             // 
             // Tb_price
             // 
-            this.Tb_price.Location = new System.Drawing.Point(217, 84);
+            this.Tb_price.Location = new System.Drawing.Point(217, 101);
             this.Tb_price.Name = "Tb_price";
             this.Tb_price.Size = new System.Drawing.Size(128, 20);
             this.Tb_price.TabIndex = 32;
@@ -189,7 +192,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 113);
+            this.label5.Location = new System.Drawing.Point(18, 130);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(25, 13);
             this.label5.TabIndex = 31;
@@ -198,7 +201,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 87);
+            this.label4.Location = new System.Drawing.Point(18, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 13);
             this.label4.TabIndex = 30;
@@ -206,14 +209,14 @@
             // 
             // Tb_v2
             // 
-            this.Tb_v2.Location = new System.Drawing.Point(49, 110);
+            this.Tb_v2.Location = new System.Drawing.Point(49, 127);
             this.Tb_v2.Name = "Tb_v2";
             this.Tb_v2.Size = new System.Drawing.Size(47, 20);
             this.Tb_v2.TabIndex = 29;
             // 
             // Tb_v1
             // 
-            this.Tb_v1.Location = new System.Drawing.Point(49, 84);
+            this.Tb_v1.Location = new System.Drawing.Point(49, 101);
             this.Tb_v1.Name = "Tb_v1";
             this.Tb_v1.Size = new System.Drawing.Size(47, 20);
             this.Tb_v1.TabIndex = 28;
@@ -221,7 +224,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(270, 50);
+            this.label3.Location = new System.Drawing.Point(270, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 13);
             this.label3.TabIndex = 27;
@@ -230,7 +233,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(189, 50);
+            this.label2.Location = new System.Drawing.Point(189, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(22, 13);
             this.label2.TabIndex = 26;
@@ -239,7 +242,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(102, 50);
+            this.label1.Location = new System.Drawing.Point(102, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(22, 13);
             this.label1.TabIndex = 25;
@@ -248,7 +251,7 @@
             // lbl_t1
             // 
             this.lbl_t1.AutoSize = true;
-            this.lbl_t1.Location = new System.Drawing.Point(21, 50);
+            this.lbl_t1.Location = new System.Drawing.Point(21, 67);
             this.lbl_t1.Name = "lbl_t1";
             this.lbl_t1.Size = new System.Drawing.Size(22, 13);
             this.lbl_t1.TabIndex = 24;
@@ -256,28 +259,28 @@
             // 
             // Tb_t4
             // 
-            this.Tb_t4.Location = new System.Drawing.Point(298, 47);
+            this.Tb_t4.Location = new System.Drawing.Point(298, 64);
             this.Tb_t4.Name = "Tb_t4";
             this.Tb_t4.Size = new System.Drawing.Size(47, 20);
             this.Tb_t4.TabIndex = 23;
             // 
             // Tb_t3
             // 
-            this.Tb_t3.Location = new System.Drawing.Point(217, 47);
+            this.Tb_t3.Location = new System.Drawing.Point(217, 64);
             this.Tb_t3.Name = "Tb_t3";
             this.Tb_t3.Size = new System.Drawing.Size(47, 20);
             this.Tb_t3.TabIndex = 22;
             // 
             // Tb_t2
             // 
-            this.Tb_t2.Location = new System.Drawing.Point(130, 47);
+            this.Tb_t2.Location = new System.Drawing.Point(130, 64);
             this.Tb_t2.Name = "Tb_t2";
             this.Tb_t2.Size = new System.Drawing.Size(47, 20);
             this.Tb_t2.TabIndex = 21;
             // 
             // Tb_t1
             // 
-            this.Tb_t1.Location = new System.Drawing.Point(49, 47);
+            this.Tb_t1.Location = new System.Drawing.Point(49, 64);
             this.Tb_t1.Name = "Tb_t1";
             this.Tb_t1.Size = new System.Drawing.Size(47, 20);
             this.Tb_t1.TabIndex = 20;
@@ -293,7 +296,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 22);
+            this.label7.Location = new System.Drawing.Point(18, 22);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(143, 13);
             this.label7.TabIndex = 35;
@@ -301,7 +304,7 @@
             // 
             // Tb_costs
             // 
-            this.Tb_costs.Location = new System.Drawing.Point(217, 138);
+            this.Tb_costs.Location = new System.Drawing.Point(217, 155);
             this.Tb_costs.Name = "Tb_costs";
             this.Tb_costs.Size = new System.Drawing.Size(128, 20);
             this.Tb_costs.TabIndex = 36;
@@ -309,7 +312,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(127, 141);
+            this.label8.Location = new System.Drawing.Point(127, 158);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 13);
             this.label8.TabIndex = 37;
@@ -433,7 +436,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(127, 113);
+            this.label14.Location = new System.Drawing.Point(127, 130);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(59, 13);
             this.label14.TabIndex = 38;
@@ -442,18 +445,27 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(127, 126);
+            this.label15.Location = new System.Drawing.Point(127, 143);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(70, 13);
             this.label15.TabIndex = 39;
             this.label15.Text = "на создание";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(18, 48);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(143, 13);
+            this.label16.TabIndex = 40;
+            this.label16.Text = "Длительности этапов ЖЦ:";
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(738, 376);
+            this.ClientSize = new System.Drawing.Size(738, 393);
             this.Controls.Add(this.Gb_result);
             this.Controls.Add(this.Gb_initVal);
             this.Controls.Add(this.Pb1);
@@ -519,6 +531,7 @@
         private System.Windows.Forms.Button Btn_result;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16;
     }
 }
 

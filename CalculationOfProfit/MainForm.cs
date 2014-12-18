@@ -128,31 +128,7 @@
         /// <param name="e"></param>
         private void Btn_result_Click(object sender, EventArgs e)
         {
-            // TODO: Расчеты.
-
-            // TODO: Удалить регион ниже.
-            #region Тестовые данные
-            Tb_t1.Text = "5";
-            Tb_t2.Text = "6";
-            Tb_t3.Text = "7";
-            Tb_t4.Text = "4";
-
-            Tb_v1.Text = "350";
-            Tb_v2.Text = "500";
-
-            Tb_price.Text = "50";
-            Tb_costs.Text = "20";
-
-            tb_prof1.Text = "1000";
-            tb_prof2.Text = "5000";
-            tb_prof3.Text = "10000";
-            tb_prof4.Text = "3000";
-
-            tb_profTotal.Text = "19000";
-            #endregion
-
-
-            #region Загрузка данных из textbox'ов
+            #region Загрузка начальных данных из textbox'ов
 
             dataOfTest.DateOfTest = Convert.ToDateTime(TB_date.Text);
 
@@ -167,14 +143,80 @@
             dataOfTest.Price = Convert.ToDouble(Tb_price.Text);
             dataOfTest.Costs = Convert.ToDouble(Tb_costs.Text);
 
-            dataOfTest.Profit[0] = Convert.ToDouble(tb_prof1.Text);
-            dataOfTest.Profit[1] = Convert.ToDouble(tb_prof2.Text);
-            dataOfTest.Profit[2] = Convert.ToDouble(tb_prof3.Text);
-            dataOfTest.Profit[3] = Convert.ToDouble(tb_prof4.Text);
+            #endregion
 
-            dataOfTest.TotalProfit = Convert.ToDouble(tb_profTotal.Text);
+            #region Расчет
+
+            // Коэффициенты рассчитываются исходя из того, что:
+            // v=kt+b
+            // k=(v2-v1)/(t2-t1)
+            // b=-(t1*v2-t2*v1)/(t2-t1)
+
+            #region Параметры участков
+
+            double[] k = new double[4];
+            double[] b = new double[4];
+            int[] t1 = new int[4];
+            int[] t2 = new int[4];
+
+            t1[0] = 0;
+            t2[0] = dataOfTest.T[0];
+            k[0] = dataOfTest.V[0]/t2[0];
+            b[0] = 0;
+
+            t1[1] = dataOfTest.T[0];
+            t2[1] = dataOfTest.T[0] + dataOfTest.T[1];
+            k[1] = (dataOfTest.V[1] - dataOfTest.V[0]) / (t2[1] - t1[1]);
+            b[1] = -(t1[1]*dataOfTest.V[1] - t2[1]*dataOfTest.V[0])/(t2[1] - t1[1]);
+
+            t1[2] = dataOfTest.T[0] + dataOfTest.T[1];
+            t2[2] = dataOfTest.T[0] + dataOfTest.T[1] + dataOfTest.T[2];
+            k[2] = 0;
+            b[2] = dataOfTest.V[1];
+
+            t1[3] = dataOfTest.T[0] + dataOfTest.T[1] + dataOfTest.T[2];
+            t2[3] = dataOfTest.T[0] + dataOfTest.T[1] + dataOfTest.T[2] + dataOfTest.T[3];
+            k[3] = (0 - dataOfTest.V[1]) / (t2[3] - t1[3]);
+            b[3] = -(0 - t2[3] * dataOfTest.V[1]) / (t2[3] - t1[3]);
 
             #endregion
+
+            dataOfTest.Profit[0] = (dataOfTest.Price - dataOfTest.Costs) * Local_V(k[0], b[0], t1[0], t2[0]);
+            dataOfTest.Profit[1] = (dataOfTest.Price - dataOfTest.Costs) * Local_V(k[1], b[1], t1[1], t2[1]);
+            dataOfTest.Profit[2] = (dataOfTest.Price - dataOfTest.Costs) * Local_V(k[2], b[2], t1[2], t2[2]);
+            dataOfTest.Profit[3] = (dataOfTest.Price - dataOfTest.Costs) * Local_V(k[3], b[3], t1[3], t2[3]);
+
+            dataOfTest.TotalProfit = dataOfTest.Profit[0] + dataOfTest.Profit[1] + dataOfTest.Profit[2] +
+                                     dataOfTest.Profit[3];
+
+            tb_prof1.Text = dataOfTest.Profit[0].ToString();
+            tb_prof2.Text = dataOfTest.Profit[1].ToString();
+            tb_prof3.Text = dataOfTest.Profit[2].ToString();
+            tb_prof4.Text = dataOfTest.Profit[3].ToString();
+
+            tb_profTotal.Text = dataOfTest.TotalProfit.ToString();
+
+            #endregion
+        }
+
+        /// <summary>
+        /// Расчет объема продаж на данном участке ЖЦ.
+        /// </summary>
+        /// <param name="k">Параметр прямой.</param>
+        /// <param name="b">Параметр прямой.</param>
+        /// <param name="t1">Начальное время участка.</param>
+        /// <param name="t2">Конечное время участка.</param>
+        /// <returns>Объем продаж на этом участке.</returns>
+        private double Local_V(double k, double b, int t1, int t2)
+        {
+            double v = 0;
+
+            for (int t = t1+1; t <= t2; t++)
+            {
+                v += k*t + b;
+            }
+
+            return v;
         }
 
         /// <summary>
@@ -185,6 +227,28 @@
         private void FrmMain_Load(object sender, EventArgs e)
         {
             TB_date.Text = DateTime.Now.ToString();
+        }
+
+        /// <summary>
+        /// Новое испытание.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void newTest_Click(object sender, EventArgs e)
+        {
+            TB_date.Text = DateTime.Now.ToString();
+
+            Tb_t1.Text =
+                Tb_t2.Text =
+                    Tb_t3.Text =
+                        Tb_t4.Text =
+                            Tb_v1.Text =
+                                Tb_v2.Text =
+                                    Tb_price.Text =
+                                        Tb_costs.Text =
+                                            tb_prof1.Text =
+                                                tb_prof2.Text =
+                                                    tb_prof3.Text = tb_prof4.Text = tb_profTotal.Text = String.Empty;
         }
     }
 }
