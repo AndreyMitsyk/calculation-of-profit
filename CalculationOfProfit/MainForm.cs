@@ -310,10 +310,11 @@
                             Tb_v1.Text =
                                 Tb_v2.Text =
                                     Tb_price.Text =
-                                        Tb_costs.Text =
-                                            tb_prof1.Text =
-                                                tb_prof2.Text =
-                                                    tb_prof3.Text = tb_prof4.Text = tb_profTotal.Text = String.Empty;
+                                        Tb_costs.Text = @"0";
+
+            tb_prof1.Text =
+                tb_prof2.Text =
+                    tb_prof3.Text = tb_prof4.Text = tb_profTotal.Text = String.Empty;
         }
 
         /// <summary>
